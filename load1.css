@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+}
+
+#left-side {
+    flex: 4;
+    padding: 20px;
+}
+
+#right-side {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 1px solid #ddd;
+}
+
+#images-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-item {
+    width: calc(33.33% - 20px);
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    opacity: 0; /* Start with images hidden */
+    transform: translateY(20px); /* Start with images slightly shifted down */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transition effect */
+    overflow: hidden; /* Ensure overflow does not distort zoom */
+}
+
+.image-item.visible {
+    opacity: 1; /* Show images */
+    transform: translateY(0); /* Move images to their original position */
+}
+
+.image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-out; /* Transition for zoom effect */
+}
+
+.image-item:hover img {
+    transform: scale(1.1); /* Zoom out effect on hover */
+}
+
+.image-item h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.image-item button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#load-more {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.recent-uploads, .comments, .top-uploads {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: skyblue;
+}
